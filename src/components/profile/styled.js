@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
   color: white;
   text-align: center;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 `
 export const WrapperInfoUser = styled.div`
@@ -54,7 +54,7 @@ export const WrapperStatusCount = styled.div`
   }
 `
 
-export const WrapperUsername = styled.div`
+export const WrapperUserGeneric = styled.div`
   display: flex;
   align-items: center;
   margin-top: 2rem;

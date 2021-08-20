@@ -1,39 +1,51 @@
 import React from 'react'
+import useGithub from '../../hooks/github-hooks'
 import * as S from './styled'
 
 const Profile = () => {
+  const { githubState } = useGithub()
+
   return (
     <S.Wrapper>
-      <S.WrapperImage
-        src="https://avatars.githubusercontent.com/u/78116908?v=4"
-        alt="foto do usuário"
-      />
+      <S.WrapperImage src={githubState.user.avatar} alt="foto do usuário" />
       <S.WrapperInfoUser>
         <div>
-          <h1>Matheus H Oliveira</h1>
-          <S.WrapperUsername>
+          <h1>{githubState.user.name}</h1>
+          <S.WrapperUserGeneric>
             <h3>Usuário:</h3>
             <a
-              href="https://github.com/matheusOliv23"
+              href={githubState.user.html_url}
               target="_blank"
               rel="noreferrer"
             >
-              matheusOliv23
+              {githubState.user.login}
             </a>
-          </S.WrapperUsername>
+          </S.WrapperUserGeneric>
+          <S.WrapperUserGeneric>
+            <h3>Company:</h3>
+            <span>{githubState.user.company}</span>
+          </S.WrapperUserGeneric>
+          <S.WrapperUserGeneric>
+            <h3>Localização:</h3>
+            <span>{githubState.user.location}</span>
+          </S.WrapperUserGeneric>
         </div>
         <S.WrapperStatusCount>
           <div>
             <h4>Seguidores</h4>
-            <span>5</span>
+            <span>{githubState.user.followers}</span>
           </div>
           <div>
-            <h4>Estrelas</h4>
-            <span>5</span>
+            <h4>Repos</h4>
+            <span>{githubState.user.public_repos}</span>
           </div>
           <div>
             <h4>Seguindo</h4>
-            <span>5</span>
+            <span>{githubState.user.following}</span>
+          </div>
+          <div>
+            <h4>Gists</h4>
+            <span>{githubState.user.public_gists}</span>
           </div>
         </S.WrapperStatusCount>
       </S.WrapperInfoUser>
