@@ -4,10 +4,7 @@ import { Tabs, TabList, Tab, TabPanel } from 'react-tabs'
 export const WrapperTabs = styled(Tabs)`
   font-size: 1rem;
   width: 100%;
-
-  @media (min-width: 768px) {
-    width: 50%;
-  }
+  background-color: gray;
 `
 export const WrapperTabList = styled(TabList)`
   list-style-type: none;
@@ -19,7 +16,7 @@ WrapperTabList.tabsRole = 'TabList'
 
 export const WrapperTab = styled(Tab)`
   border-radius: 1rem;
-  border: 0.5rem solid #ccc;
+  border: 0.5rem solid #282a35;
   padding: 0.5rem;
   user-select: none;
   cursor: pointer;
@@ -49,3 +46,9 @@ export const WrapperTabPanel = styled(TabPanel)`
   }
 `
 WrapperTabPanel.tabsRole = 'TabPanel'
+
+export const WrapperList = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`

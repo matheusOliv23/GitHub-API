@@ -43,10 +43,6 @@ const Profile = () => {
             <h4>Seguindo</h4>
             <span>{githubState.user.following}</span>
           </div>
-          <div>
-            <h4>Gists</h4>
-            <span>{githubState.user.public_gists}</span>
-          </div>
         </S.WrapperStatusCount>
       </S.WrapperInfoUser>
     </S.Wrapper>
